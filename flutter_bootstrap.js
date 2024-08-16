@@ -1,5 +1,4 @@
-{{ flutter_js }}
-{{ flutter_build_config }}
+
 
 const loading = document.createElement('div');
 document.body.appendChild(loading);

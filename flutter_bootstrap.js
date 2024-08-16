@@ -6,6 +6,6 @@ _flutter.loader.load({
     serviceWorkerVersion: {{flutter_service_worker_version}},
   },
   config: {
-    canvasKitBaseUrl: 'canvaskit/',
+   canvasKitBaseUrl: '/Motion-Admin/canvaskit/',
   }
 });

@@ -1,11 +1,18 @@
+{{ flutter_js }}
+{{ flutter_build_config }}
 
-{{flutter_js}}
-{{flutter_build_config}}
+const loading = document.createElement('div');
+document.body.appendChild(loading);
+loading.textContent = "Loading Entrypoint...";
 _flutter.loader.load({
   serviceWorkerSettings: {
     serviceWorkerVersion: {{flutter_service_worker_version}},
   },
-  config: {
-    canvasKitBaseUrl: 'canvaskit/',
+  onEntrypointLoaded: async function (engineInitializer) {
+    loading.textContent = "Initializing engine...";
+    const appRunner = await engineInitializer.initializeEngine();
+
+    loading.textContent = "Running app...";
+    await appRunner.runApp();
   }
 });
